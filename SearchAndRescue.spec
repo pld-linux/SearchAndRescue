@@ -13,6 +13,7 @@ Release:	0.1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2
+# Source0-md5:	daea6aab75723a0846a7374c4c3de528
 Patch0:		%{name}-Makefile.patch
 URL:		http://wolfpack.twu.net/SearchAndRescue/
 BuildRequires:	XFree86-devel >= 3.3.6
