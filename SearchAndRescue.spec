@@ -6,12 +6,12 @@
 Summary:	Search And Rescue - Linux flight simulator
 Summary(pl):	Search And Rescue - symulator lotu ¶mig³owca
 Name:		SearchAndRescue
-Version:	0.7d
+Version:	0.7.20
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}%{version}.tar.bz2
-#Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2 (new scheme)
+#Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}%{version}.tar.bz2
+Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2
 Patch1:		SAR-Makefile.patch
 URL:		http://wolfpack.twu.net/SearchAndRescue/
 BuildRequires:	XFree86-devel >= 3.3.6
@@ -30,7 +30,7 @@ Linux flight simulator.
 Symulator lotu ¶mig³owcem.
 
 %prep
-%setup -q -n %{name}%{version}
+%setup -q -n %{name}-%{version}
 %patch1 -p0
 
 %build
