@@ -21,7 +21,7 @@ BuildRequires:	OpenGL-devel
 %{?_with_liby:BuildRequires:	libY-devel}
 %{?_with_jsw:BuildRequires:	libjsw-devel}
 Requires:	OpenGL
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
 
