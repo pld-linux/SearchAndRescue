@@ -8,13 +8,13 @@
 Summary:	Search And Rescue - Linux flight simulator
 Summary(pl):	Search And Rescue - symulator lotu ¶mig³owca
 Name:		SearchAndRescue
-Version:	0.7.20
+Version:	0.8.1
 Release:	0.1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2
-# Source0-md5:	daea6aab75723a0846a7374c4c3de528
-Patch0:		%{name}-Makefile.patch
+# Source0-md5:	f94feb21f950fc8c433efcfd13b11175
+#Patch0:		%{name}-Makefile.patch
 URL:		http://wolfpack.twu.net/SearchAndRescue/
 BuildRequires:	XFree86-devel >= 3.3.6
 BuildRequires:	OpenGL-devel
@@ -33,15 +33,16 @@ Symulator lotu ¶mig³owcem.
 
 %prep
 %setup -q
-%patch0 -p1
+#%patch0 -p1
 
 %build
-%{__make} -C sar -f Makefile.Linux \
-	OPTFLAGS="%{rpmcflags} %{!?debug:-fomit-frame-pointer}"
+./configure Linux --prefix=%{_prefix}
+%{__make} \
+	LDFLAGS="%{rpmldflags}" OPTFLAGS="%{rpmcflags} %{!?debug:-fomit-frame-pointer}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} -C sar -f Makefile.Linux install \
+%{__make} install \
 	PREFIX=$RPM_BUILD_ROOT%{_prefix} \
 	GAMES_DIR=$RPM_BUILD_ROOT%{_bindir} \
 	MAN_DIR=$RPM_BUILD_ROOT%{_mandir}/man6 \
@@ -53,8 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS INSTALL README docs
+%doc AUTHORS INSTALL README
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/SearchAndRescue
-%{_pixmapsdir}/SearchAndRescue.xpm
+%{_iconsdir}/SearchAndRescue.xpm
 %{_mandir}/man6/*
