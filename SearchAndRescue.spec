@@ -1,25 +1,27 @@
 #
-# TODO: fix default paths
+# TODO:
+#	-fix default paths
+#	-add data subpackage
 #
 # Conditional build:
-# --with libY	- with libY
-# --with jsw	- with lib joystick
+%bcond_with libY	# build with libY
+%bcond_with jsw		# uild with joystick support
 #
 Summary:	Search And Rescue - Linux flight simulator
 Summary(pl):	Search And Rescue - symulator lotu ¶mig³owca
 Name:		SearchAndRescue
-Version:	0.8.1
+Version:	0.8.2
 Release:	0.1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2
-# Source0-md5:	f94feb21f950fc8c433efcfd13b11175
+# Source0-md5:	e2c56a25adb57554dfb25cc8175b502b
 #Patch0:		%{name}-Makefile.patch
 URL:		http://wolfpack.twu.net/SearchAndRescue/
 BuildRequires:	XFree86-devel >= 3.3.6
 BuildRequires:	OpenGL-devel
-%{?_with_liby:BuildRequires:	libY-devel}
-%{?_with_jsw:BuildRequires:	libjsw-devel}
+%{?with_liby:BuildRequires:	libY-devel}
+%{?with_jsw:BuildRequires:	libjsw-devel}
 Requires:	OpenGL
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
