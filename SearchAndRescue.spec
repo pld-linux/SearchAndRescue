@@ -10,8 +10,6 @@ Version:	0.7d
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
-Group(de):	X11/Applikationen/Spiele
-Group(pl):	X11/Aplikacje/Gry
 Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}%{version}.tar.bz2
 #Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2 (new scheme)
 Patch1:		SAR-Makefile.patch
