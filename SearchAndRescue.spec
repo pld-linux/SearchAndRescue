@@ -18,7 +18,7 @@ Patch0:		%{name}-Makefile.patch
 URL:		http://wolfpack.twu.net/SearchAndRescue/
 BuildRequires:	XFree86-devel >= 3.3.6
 BuildRequires:	OpenGL-devel
-%{?_with_liby:BuildRequires: libY-devel}
+%{?_with_liby:BuildRequires:	libY-devel}
 %{?_with_jsw:BuildRequires:	libjsw-devel}
 Requires:	OpenGL
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
