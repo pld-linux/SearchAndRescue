@@ -32,7 +32,7 @@ Linux flight simulator.
 Symulator lotu ¶mig³owcem.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 %patch0 -p1
 
 %build
