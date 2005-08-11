@@ -4,8 +4,8 @@
 #	-add data subpackage
 #
 # Conditional build:
-%bcond_with libY	# build with libY
-%bcond_with jsw		# uild with joystick support
+%bcond_with	libY	# build with libY
+%bcond_with	jsw		# uild with joystick support
 #
 Summary:	Search And Rescue - Linux flight simulator
 Summary(pl):	Search And Rescue - symulator lotu ¶mig³owca
