@@ -8,7 +8,7 @@
 %bcond_with	jsw		# uild with joystick support
 #
 Summary:	Search And Rescue - Linux flight simulator
-Summary(pl.UTF-8):   Search And Rescue - symulator lotu śmigłowca
+Summary(pl.UTF-8):	Search And Rescue - symulator lotu śmigłowca
 Name:		SearchAndRescue
 Version:	0.8.2
 Release:	0.1
