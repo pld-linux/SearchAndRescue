@@ -7,19 +7,20 @@
 %bcond_with	libY	# build with libY
 %bcond_with	jsw		# uild with joystick support
 #
+%define		shortname searchandrescue
 Summary:	Search And Rescue - Linux flight simulator
 Summary(pl.UTF-8):	Search And Rescue - symulator lotu śmigłowca
 Name:		SearchAndRescue
-Version:	0.8.2
+Version:	1.0.0
 Release:	0.1
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2
-# Source0-md5:	e2c56a25adb57554dfb25cc8175b502b
-#Patch0:		%{name}-Makefile.patch
-URL:		http://wolfpack.twu.net/SearchAndRescue/
-BuildRequires:	XFree86-devel >= 3.3.6
+Source0:	http://downloads.sourceforge.net/project/searchandrescue/Program/SearchAndRescue-1.0.0.tar.gz
+# Source0-md5:	3197fe440472e27d36477daaba3b1023
+#Patch0: %{name}-Makefile.patch
+URL:		http://searchandrescue.sourceforge.net/
 BuildRequires:	OpenGL-devel
+BuildRequires:	xorg-xserver-server-devel
 %{?with_liby:BuildRequires:	libY-devel}
 %{?with_jsw:BuildRequires:	libjsw-devel}
 Requires:	OpenGL
@@ -34,7 +35,7 @@ Linux flight simulator.
 Symulator lotu śmigłowcem.
 
 %prep
-%setup -q
+%setup -q -n %{shortname}_%{version}
 #%patch0 -p1
 
 %build
