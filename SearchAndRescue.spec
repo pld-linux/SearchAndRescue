@@ -1,8 +1,4 @@
 #
-# TODO:
-#	-fix default paths
-#	-add data subpackage
-#
 # Conditional build:
 %bcond_with	libY	# build with libY
 %bcond_with	jsw	# uild with joystick support
@@ -13,7 +9,7 @@ Summary(pl.UTF-8):	Search And Rescue - symulator lotu śmigłowca
 Name:		SearchAndRescue
 Version:	1.0.0
 Release:	0.1
-License:	GPL
+License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://downloads.sourceforge.net/searchandrescue/Program/%{name}-%{version}.tar.gz
 # Source0-md5:	3197fe440472e27d36477daaba3b1023
