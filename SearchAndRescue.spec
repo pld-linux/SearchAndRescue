@@ -15,14 +15,16 @@ Version:	1.0.0
 Release:	0.1
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	http://downloads.sourceforge.net/project/searchandrescue/Program/SearchAndRescue-1.0.0.tar.gz
+Source0:	http://downloads.sourceforge.net/searchandrescue/Program/%{name}-%{version}.tar.gz
 # Source0-md5:	3197fe440472e27d36477daaba3b1023
+Source1:	http://downloads.sourceforge.net/searchandrescue/Data_Files/%{name}-data-%{version}.tar.gz
+# Source1-md5:	da92f5fa7587cc0a712706d01b2f59f1
 #Patch0: %{name}-Makefile.patch
 URL:		http://searchandrescue.sourceforge.net/
 BuildRequires:	OpenGL-devel
-BuildRequires:	xorg-xserver-server-devel
 %{?with_liby:BuildRequires:	libY-devel}
 %{?with_jsw:BuildRequires:	libjsw-devel}
+BuildRequires:	xorg-xserver-server-devel
 Requires:	OpenGL
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -45,12 +47,17 @@ Symulator lotu śmigłowcem.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_datadir}/games/%{shortname}
+
 %{__make} install \
 	PREFIX=$RPM_BUILD_ROOT%{_prefix} \
 	GAMES_DIR=$RPM_BUILD_ROOT%{_bindir} \
 	MAN_DIR=$RPM_BUILD_ROOT%{_mandir}/man6 \
 	SHARE_GAMES_DIR=$RPM_BUILD_ROOT%{_datadir} \
 	SHADE_ICONS_DIR=$RPM_BUILD_ROOT%{_pixmapsdir}
+
+# unpack data files
+tar xvf %{SOURCE1} -C $RPM_BUILD_ROOT%{_datadir}/games/%{shortname}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -59,5 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS INSTALL README
 %attr(755,root,root) %{_bindir}/*
-%{_iconsdir}/SearchAndRescue.xpm
+%{_datadir}/games/%{shortname}
+#%%{_iconsdir}/SearchAndRescue.xpm
 %{_mandir}/man6/*
