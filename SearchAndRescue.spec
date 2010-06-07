@@ -5,7 +5,7 @@
 #
 # Conditional build:
 %bcond_with	libY	# build with libY
-%bcond_with	jsw		# uild with joystick support
+%bcond_with	jsw	# uild with joystick support
 #
 %define		shortname searchandrescue
 Summary:	Search And Rescue - Linux flight simulator
@@ -19,7 +19,6 @@ Source0:	http://downloads.sourceforge.net/searchandrescue/Program/%{name}-%{vers
 # Source0-md5:	3197fe440472e27d36477daaba3b1023
 Source1:	http://downloads.sourceforge.net/searchandrescue/Data_Files/%{name}-data-%{version}.tar.gz
 # Source1-md5:	da92f5fa7587cc0a712706d01b2f59f1
-#Patch0: %{name}-Makefile.patch
 URL:		http://searchandrescue.sourceforge.net/
 BuildRequires:	OpenGL-devel
 %{?with_liby:BuildRequires:	libY-devel}
@@ -38,7 +37,6 @@ Symulator lotu śmigłowcem.
 
 %prep
 %setup -q -n %{shortname}_%{version}
-#%patch0 -p1
 
 %build
 ./configure Linux --prefix=%{_prefix}
