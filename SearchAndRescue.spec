@@ -1,9 +1,12 @@
 #
+# TODO:
+#	- fix default paths
+#
 # Conditional build:
 %bcond_with	libY	# build with libY
 %bcond_with	jsw	# uild with joystick support
 #
-%define		shortname searchandrescue
+%define		shortname	searchandrescue
 Summary:	Search And Rescue - Linux flight simulator
 Summary(pl.UTF-8):	Search And Rescue - symulator lotu śmigłowca
 Name:		SearchAndRescue
