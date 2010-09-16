@@ -19,6 +19,7 @@ Source0:	http://downloads.sourceforge.net/searchandrescue/Program/%{name}-%{vers
 # Source0-md5:	f785d5968a8c3f57b021d40953ac4d32
 Source1:	http://downloads.sourceforge.net/searchandrescue/Data_Files/%{name}-data-%{data_ver}.tar.gz
 # Source1-md5:	da92f5fa7587cc0a712706d01b2f59f1
+Patch0:		%{name}-flags.patch
 URL:		http://searchandrescue.sourceforge.net/
 BuildRequires:	OpenGL-devel
 %{?with_liby:BuildRequires:	libY-devel}
@@ -37,11 +38,16 @@ Symulator lotu śmigłowcem.
 
 %prep
 %setup -q -n %{shortname}_%{version}
+%patch0 -p1
 
 %build
-./configure Linux --prefix=%{_prefix}
+./configure Linux \
+	--prefix=%{_prefix}
+
 %{__make} \
-	LDFLAGS="%{rpmldflags}" OPTFLAGS="%{rpmcflags} %{!?debug:-fomit-frame-pointer}"
+	LDFLAGS="%{rpmldflags}" \
+	OPTCFLAGS="%{rpmcflags} %{!?debug:-fomit-frame-pointer}" \
+	OPTCPPFLAGS="%{rpmcxxflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
