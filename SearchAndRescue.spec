@@ -11,12 +11,12 @@
 Summary:	Search And Rescue - Linux flight simulator
 Summary(pl.UTF-8):	Search And Rescue - symulator lotu śmigłowca
 Name:		SearchAndRescue
-Version:	1.1.0
+Version:	1.2.0
 Release:	0.1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://downloads.sourceforge.net/searchandrescue/Program/%{name}-%{version}.tar.gz
-# Source0-md5:	f785d5968a8c3f57b021d40953ac4d32
+# Source0-md5:	58b67b55ea71032fcfde7a80d38f7846
 Source1:	http://downloads.sourceforge.net/searchandrescue/Data_Files/%{name}-data-%{data_ver}.tar.gz
 # Source1-md5:	da92f5fa7587cc0a712706d01b2f59f1
 Patch0:		%{name}-flags.patch
