@@ -1,0 +1,25 @@
+--- searchandrescue_1.3.0/sar/v3dtex.c~	2011-04-01 20:27:15.000000000 +0200
++++ searchandrescue_1.3.0/sar/v3dtex.c	2011-04-27 11:56:18.833333379 +0200
+@@ -85,6 +85,22 @@
+  );							\
+ }
+ 
++#define TEXTUREIO_TEX_OPTIONS_2D                \
++{                                         \
++ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); \
++ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT); \
++  glTexParameteri(                              \
++  GL_TEXTURE_2D,                          \
++  GL_TEXTURE_MAG_FILTER,                        \
++  GL_NEAREST                                    \
++ );                                       \
++ glTexParameteri(                         \
++  GL_TEXTURE_2D,                          \
++  GL_TEXTURE_MIN_FILTER,                        \
++  GL_NEAREST                                    \
++ );                                       \
++}
++
+ #ifdef OLD_GRAPHICS
+ #define TEXTUREIO_TEX_OPTIONS_2D			\
+ {							\
